@@ -1,0 +1,213 @@
+[
+  {
+    "id": "START",
+    "type": "start",
+    "text": "Good evening. Let’s reflect on your day."
+  },
+
+  {
+    "id": "A1_Q1",
+    "type": "question",
+    "text": "How would you describe your day?",
+    "options": ["Productive", "Tough", "Mixed", "Frustrating"]
+  },
+
+  {
+    "id": "A1_D1",
+    "type": "decision",
+    "rules": {
+      "Productive": "A1_Q2_HIGH",
+      "Mixed": "A1_Q2_HIGH",
+      "Tough": "A1_Q2_LOW",
+      "Frustrating": "A1_Q2_LOW"
+    }
+  },
+
+  {
+    "id": "A1_Q2_HIGH",
+    "type": "question",
+    "text": "When things went well today, what made it happen?",
+    "options": [
+      "My preparation",
+      "Team effort",
+      "Luck",
+      "I adapted quickly"
+    ]
+  },
+
+  {
+    "id": "A1_Q2_LOW",
+    "type": "question",
+    "text": "When things went wrong, what was your first reaction?",
+    "options": [
+      "Tried to fix what I could",
+      "Waited for help",
+      "Felt stuck",
+      "Blamed situation"
+    ]
+  },
+
+  {
+    "id": "A1_R_INT",
+    "type": "reflection",
+    "text": "You recognized your role in shaping outcomes today. That shows personal agency.",
+    "signal": "axis1:internal"
+  },
+
+  {
+    "id": "A1_R_EXT",
+    "type": "reflection",
+    "text": "It felt like things were outside your control today. But even small choices matter.",
+    "signal": "axis1:external"
+  },
+
+  {
+    "id": "BRIDGE_1_2",
+    "type": "bridge",
+    "text": "Now let’s shift from control to contribution."
+  }
+  ,
+{
+  "id": "A1_D2_HIGH",
+  "type": "decision",
+  "rules": {
+    "My preparation": "A1_R_INT",
+    "I adapted quickly": "A1_R_INT",
+    "Team effort": "A1_R_EXT",
+    "Luck": "A1_R_EXT"
+  }
+},
+{
+  "id": "A1_D2_LOW",
+  "type": "decision",
+  "rules": {
+    "Tried to fix what I could": "A1_R_INT",
+    "Waited for help": "A1_R_EXT",
+    "Felt stuck": "A1_R_EXT",
+    "Blamed situation": "A1_R_EXT"
+  }
+},
+{
+  "id": "A1_Q3",
+  "type": "question",
+  "text": "After facing a challenge, what did you focus on?",
+  "options": [
+    "What I could improve",
+    "Why it happened",
+    "Who caused it",
+    "Next steps"
+  ]
+}
+,
+{
+  "id": "A2_Q1",
+  "type": "question",
+  "text": "Which of these best describes a moment from today?",
+  "options": [
+    "I helped someone without being asked",
+    "I did more than required",
+    "I felt I deserved more recognition",
+    "I felt others were not doing enough"
+  ]
+},
+{
+  "id": "A2_D1",
+  "type": "decision",
+  "rules": {
+    "I helped someone without being asked": "A2_Q2_CONTRIB",
+    "I did more than required": "A2_Q2_CONTRIB",
+    "I felt I deserved more recognition": "A2_Q2_ENTITLE",
+    "I felt others were not doing enough": "A2_Q2_ENTITLE"
+  }
+},
+{
+  "id": "A2_Q2_CONTRIB",
+  "type": "question",
+  "text": "What motivated your extra effort?",
+  "options": [
+    "Helping the team",
+    "Improving outcomes",
+    "Personal satisfaction",
+    "Responsibility"
+  ]
+},
+{
+  "id": "A2_Q2_ENTITLE",
+  "type": "question",
+  "text": "What bothered you the most?",
+  "options": [
+    "Lack of recognition",
+    "Others' performance",
+    "Unfair workload",
+    "No appreciation"
+  ]
+},
+{
+  "id": "A2_R_CONTRIB",
+  "type": "reflection",
+  "text": "You focused on what you could give today. That builds long-term value.",
+  "signal": "axis2:contribution"
+},
+{
+  "id": "A2_R_ENTITLE",
+  "type": "reflection",
+  "text": "Your focus was on what you expected. Notice how that affects your mindset.",
+  "signal": "axis2:entitlement"
+},
+{
+  "id": "BRIDGE_2_3",
+  "type": "bridge",
+  "text": "Now let’s expand beyond yourself."
+}
+,
+{
+  "id": "A3_Q1",
+  "type": "question",
+  "text": "When you think about today's biggest challenge, who comes to mind?",
+  "options": [
+    "Just me",
+    "My team",
+    "A colleague",
+    "Customer or user"
+  ]
+},
+{
+  "id": "A3_D1",
+  "type": "decision",
+  "rules": {
+    "Just me": "A3_SELF",
+    "My team": "A3_TEAM",
+    "A colleague": "A3_TEAM",
+    "Customer or user": "A3_WIDE"
+  }
+},
+{
+  "id": "A3_SELF",
+  "type": "reflection",
+  "text": "Your focus was mainly on yourself today. Expanding perspective can reduce stress.",
+  "signal": "axis3:self"
+},
+{
+  "id": "A3_TEAM",
+  "type": "reflection",
+  "text": "You considered others along with yourself. That builds collaboration.",
+  "signal": "axis3:team"
+},
+{
+  "id": "A3_WIDE",
+  "type": "reflection",
+  "text": "You thought beyond yourself toward impact. That’s strong perspective.",
+  "signal": "axis3:wide"
+}
+,
+{
+  "id": "SUMMARY",
+  "type": "summary",
+  "text": "Today reflected your patterns in control, contribution, and perspective. Small changes in awareness can create big improvements."
+},
+{
+  "id": "END",
+  "type": "end",
+  "text": "Good job reflecting today. See you tomorrow."
+}
+]
